@@ -70,7 +70,7 @@ abstract class :xhp:html-element extends :x:primitive {
       if ($val !== null) {
         if ($val === true) {
           $buf .= ' '.htmlspecialchars($key).'="true"';
-        } else if ($var === false) {
+        } else if ($val === false) {
           $buf .= ' '.htmlspecialchars($key).'="false"';
         } else {
           $buf .= ' '.htmlspecialchars($key).'="'.htmlspecialchars($val, ENT_QUOTES).'"';
