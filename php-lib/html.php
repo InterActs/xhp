@@ -67,9 +67,11 @@ abstract class :xhp:html-element extends :x:primitive {
   protected final function renderBaseAttrs() {
     $buf = '<'.$this->tagName;
     foreach ($this->getAttributes() as $key => $val) {
-      if ($val !== null && $val !== false) {
+      if ($val !== null) {
         if ($val === true) {
-          $buf .= ' '.htmlspecialchars($key);
+          $buf .= ' '.htmlspecialchars($key).'="true"';
+        } else if ($var === false) {
+          $buf .= ' '.htmlspecialchars($key).'="false"';
         } else {
           $buf .= ' '.htmlspecialchars($key).'="'.htmlspecialchars($val, ENT_QUOTES).'"';
         }
